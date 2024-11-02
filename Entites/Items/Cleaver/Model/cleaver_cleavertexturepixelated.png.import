@@ -2,22 +2,25 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db4sj172e6acg"
-path.s3tc="res://.godot/imported/texture_06.png-51212b8751eeb99f6d784179793e092d.s3tc.ctex"
+uid="uid://b8eelg4c82mv8"
+path.bptc="res://.godot/imported/cleaver_cleavertexturepixelated.png-7995b7e6396b897584db876e9cf58a8b.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "80ed27eeb72a3d6214b74efe92a0e391"
+}
 
 [deps]
 
-source_file="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/orange/texture_06.png"
-dest_files=["res://.godot/imported/texture_06.png-51212b8751eeb99f6d784179793e092d.s3tc.ctex"]
+source_file="res://RipeOrgans/Entites/Items/Cleaver/Model/cleaver_cleavertexturepixelated.png"
+dest_files=["res://.godot/imported/cleaver_cleavertexturepixelated.png-7995b7e6396b897584db876e9cf58a8b.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

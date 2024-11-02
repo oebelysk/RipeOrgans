@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bom2tqbiaaj8o"]
+
+[ext_resource type="Script" path="res://RipeOrgans/Entites/Items/Cleaver/cleaver_equipped.gd" id="1_s8ga2"]
+[ext_resource type="ArrayMesh" uid="uid://bvltdvf2lb6x2" path="res://RipeOrgans/Entites/Items/Cleaver/Model/Cleaver.tres" id="2_up5ym"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o867w"]
+margin = 0.0
+size = Vector3(0.422, 1.139, 3.7)
+
+[node name="CleaverEquipped" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_s8ga2")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.105)
+shape = SubResource("BoxShape3D_o867w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.999999, -8.94075e-11, 2.53051e-09, 0, 0.999999, 7.45058e-09, 0, 7.45058e-09, 1, -0.00779634, -0.0102867, 0.0366699)
+mesh = ExtResource("2_up5ym")
+skeleton = NodePath("")
