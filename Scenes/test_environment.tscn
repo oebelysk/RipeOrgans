@@ -1,47 +1,48 @@
-[gd_scene load_steps=24 format=3 uid="uid://cxtsrl1n1ja4s"]
+[gd_scene load_steps=26 format=3 uid="uid://b2aqcgh7wk0wk"]
 
-[ext_resource type="Texture2D" uid="uid://csvsx37pglei8" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/green/texture_05.png" id="1_wgctg"]
-[ext_resource type="Texture2D" uid="uid://bfqd7g467dc36" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/orange/texture_10.png" id="2_lkyu2"]
-[ext_resource type="Texture2D" uid="uid://78bum10k30m1" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/dark/texture_01.png" id="3_6iert"]
-[ext_resource type="Texture2D" uid="uid://ce1lprvwbr2v7" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/dark/texture_02.png" id="4_43als"]
-[ext_resource type="Texture2D" uid="uid://dlsi58kign3mq" path="res://RipeOrgans/Materials/Rust01/Rust01_Color.png" id="5_ax383"]
-[ext_resource type="PackedScene" uid="uid://ccc17m7eo73r" path="res://RipeOrgans/Player/player.tscn" id="5_b0fa5"]
-[ext_resource type="Texture2D" uid="uid://bxuki87fu0nru" path="res://RipeOrgans/Materials/Rust01/Rust01_Metallic.png" id="6_e3fto"]
-[ext_resource type="PackedScene" uid="uid://chtcx4pykc58y" path="res://RipeOrgans/Entites/Items/Cleaver/cleaver.tscn" id="6_qs5qh"]
-[ext_resource type="Texture2D" uid="uid://doob2evmtqurk" path="res://RipeOrgans/Materials/Rust01/Rust01_Normal.png" id="7_2w14l"]
-[ext_resource type="Texture2D" uid="uid://dkjtmk00hobl1" path="res://RipeOrgans/Materials/Rust01/Rust01_Roughness.png" id="8_eqnqs"]
+[ext_resource type="Texture2D" uid="uid://csvsx37pglei8" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/green/texture_05.png" id="1_dcm1h"]
+[ext_resource type="Texture2D" uid="uid://bfqd7g467dc36" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/orange/texture_10.png" id="2_lmjxt"]
+[ext_resource type="Texture2D" uid="uid://78bum10k30m1" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/dark/texture_01.png" id="3_2oylx"]
+[ext_resource type="Texture2D" uid="uid://ce1lprvwbr2v7" path="res://RipeOrgans/Assets/Textures/kenney_prototype_textures/dark/texture_02.png" id="4_1ni64"]
+[ext_resource type="Texture2D" uid="uid://dlsi58kign3mq" path="res://RipeOrgans/Materials/Rust01/Rust01_Color.png" id="5_1rivb"]
+[ext_resource type="Texture2D" uid="uid://bxuki87fu0nru" path="res://RipeOrgans/Materials/Rust01/Rust01_Metallic.png" id="6_e6keb"]
+[ext_resource type="Texture2D" uid="uid://doob2evmtqurk" path="res://RipeOrgans/Materials/Rust01/Rust01_Normal.png" id="7_6e4w4"]
+[ext_resource type="Texture2D" uid="uid://dkjtmk00hobl1" path="res://RipeOrgans/Materials/Rust01/Rust01_Roughness.png" id="8_saqc6"]
+[ext_resource type="PackedScene" uid="uid://ccc17m7eo73r" path="res://RipeOrgans/Player/player.tscn" id="9_kqrx8"]
+[ext_resource type="Texture2D" uid="uid://cprnsx8da45ci" path="res://RipeOrgans/Materials/Fence007C_8K-PNG/Fence007_8K-PNG_ColorTransparent.png" id="9_rtdyx"]
+[ext_resource type="PackedScene" uid="uid://chtcx4pykc58y" path="res://RipeOrgans/Entites/Items/Cleaver/cleaver.tscn" id="10_dyy07"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0lto"]
-albedo_texture = ExtResource("1_wgctg")
+albedo_texture = ExtResource("1_dcm1h")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwoee"]
-albedo_texture = ExtResource("2_lkyu2")
+albedo_texture = ExtResource("2_lmjxt")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wxc8"]
-albedo_texture = ExtResource("2_lkyu2")
+albedo_texture = ExtResource("2_lmjxt")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mk7dw"]
-albedo_texture = ExtResource("3_6iert")
+albedo_texture = ExtResource("3_2oylx")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arkw0"]
-albedo_texture = ExtResource("4_43als")
+albedo_texture = ExtResource("4_1ni64")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcfko"]
-albedo_texture = ExtResource("4_43als")
+albedo_texture = ExtResource("4_1ni64")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u31ew"]
-albedo_texture = ExtResource("4_43als")
+albedo_texture = ExtResource("4_1ni64")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -50,12 +51,20 @@ uv1_world_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_clbjn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16arx"]
-albedo_texture = ExtResource("5_ax383")
+albedo_texture = ExtResource("5_1rivb")
 metallic = 1.0
-metallic_texture = ExtResource("6_e3fto")
-roughness_texture = ExtResource("8_eqnqs")
+metallic_texture = ExtResource("6_e6keb")
+roughness_texture = ExtResource("8_saqc6")
 normal_enabled = true
-normal_texture = ExtResource("7_2w14l")
+normal_texture = ExtResource("7_6e4w4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oueps"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("9_rtdyx")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tfl3i"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -141,15 +150,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279537, 0.101505, 0.0394967
 mesh = SubResource("BoxMesh_clbjn")
 surface_material_override/0 = SubResource("StandardMaterial3D_16arx")
 
+[node name="CSGBox3D10" type="CSGBox3D" parent="Static Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0.0013788, 0, -0.0013788, 0.999999, 2.61644, 0.237828, -3.79992)
+size = Vector3(3, 0.001, 23.2192)
+material = SubResource("StandardMaterial3D_oueps")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 3.57643, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a2vps")
 
-[node name="Player" parent="." instance=ExtResource("5_b0fa5")]
+[node name="Player" parent="." instance=ExtResource("9_kqrx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350081, 0)
 
-[node name="Cleaver" parent="." instance=ExtResource("6_qs5qh")]
+[node name="Cleaver" parent="." instance=ExtResource("10_dyy07")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.24844, 4.31779, -4.43359)

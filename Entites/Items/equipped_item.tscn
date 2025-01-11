@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfqquycr28rlr"]
-
-[ext_resource type="Script" path="res://RipeOrgans/Entites/Items/equipped_item.gd" id="1_bnrir"]
-
-[node name="EquippedItem" type="Node3D"]
-script = ExtResource("1_bnrir")
-
-[node name="Area3D" type="Area3D" parent="."]

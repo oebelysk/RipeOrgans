@@ -40,15 +40,6 @@ void fragment() {
     // Calculate velocity
     vec2 velocity = uv - previous_pos;
 
-    // Apply pixelation effect
-    uv = floor(uv * pixelSize) / pixelSize;
-
-    // Add noise distortion
-    float uvY = uv.y * noiseQuality;
-    uvY = float(int(uvY)) * (1.0 / noiseQuality);
-    float noise = rand(vec2(TIME * 0.00001, uvY));
-    uv.x += noise * noiseIntensity;
-
     // Add color offset distortion
     vec2 offsetR = vec2(0.006 * sin(TIME), 0.0) * colorOffsetIntensity;
     vec2 offsetG = vec2(0.0073 * cos(TIME * 0.97), 0.0) * colorOffsetIntensity;
@@ -59,22 +50,10 @@ void fragment() {
 
     vec4 tex = vec4(r, g, b, 1.0);
 
-    // Overlay with an optional texture
-    if (use_overlay) {
-        vec4 overlayColor = texture(overlay_texture, uv) * overlay_color; // Apply overlay color
-        tex = mix(tex, overlayColor, overlayColor.a);
-    }
-
     // Add film grain
-    float grain = rand(uv) * 2.0 - 1.0; // Range from -1 to 1
+    float grain = rand(uv * TIME) * 2.0 - 1.0; // Range from -1 to 1
     tex.rgb += grainIntensity * grain;
 
-    // Apply lens distortion
-    if (use_lens_distortion) {
-        vec2 distortion = uv * lens_distortion_strength * (uv - 1.0);
-        vec4 distorted_tex = texture(screen_texture, uv + distortion);
-        tex = mix(tex, distorted_tex, 0.5);
-    }
 
     // Apply final color
     COLOR = tex;

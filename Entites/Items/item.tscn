@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://81ah3cl2a7nl"]
+
+[ext_resource type="Script" path="res://RipeOrgans/Entites/Items/item.gd" id="1_y7xw5"]
+
+[sub_resource type="Animation" id="Animation_ilh3n"]
+resource_name = "new_animation"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gntjy"]
+_data = {
+"new_animation": SubResource("Animation_ilh3n")
+}
+
+[node name="Item" type="Node3D"]
+script = ExtResource("1_y7xw5")
+
+[node name="Physical" type="Node3D" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Physical"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Physical/RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Physical/RigidBody3D"]
+
+[node name="Equipped" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Equipped"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Equipped/Area3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Equipped/Area3D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gntjy")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
