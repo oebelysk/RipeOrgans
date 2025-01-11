@@ -1,0 +1,149 @@
+[gd_scene load_steps=24 format=3 uid="uid://c8g162qbo53t6"]
+
+[ext_resource type="Texture2D" uid="uid://cxfwsvfpkuxf0" path="res://RipeOrgans/Materials/Concrete035_1K-PNG/Concrete035_1K-PNG_Color.png" id="1_be07k"]
+[ext_resource type="PackedScene" uid="uid://ccc17m7eo73r" path="res://RipeOrgans/Player/player.tscn" id="1_eodxr"]
+[ext_resource type="Texture2D" uid="uid://cprnsx8da45ci" path="res://RipeOrgans/Materials/Fence007C_8K-PNG/Fence007_8K-PNG_ColorTransparent.png" id="2_o68bp"]
+[ext_resource type="Texture2D" uid="uid://dk4wsmoily6s0" path="res://RipeOrgans/Materials/Concrete035_1K-PNG/Concrete035_1K-PNG_NormalGL.png" id="2_pmpgn"]
+[ext_resource type="Texture2D" uid="uid://dkxij0j7s1dc7" path="res://RipeOrgans/Materials/Fence007C_8K-PNG/Fence007C_8K-PNG_Displacement.png" id="3_dlrhr"]
+[ext_resource type="Texture2D" uid="uid://dpw27pprnf0c8" path="res://RipeOrgans/Materials/Concrete035_1K-PNG/Concrete035_1K-PNG_Roughness.png" id="3_ukw1r"]
+[ext_resource type="Texture2D" uid="uid://d0km5iboofxd6" path="res://RipeOrgans/Materials/Fence007C_8K-PNG/Fence007C_8K-PNG_Metalness.png" id="4_ykyo8"]
+[ext_resource type="Texture2D" uid="uid://v03rfnsuyij7" path="res://RipeOrgans/Materials/Fence007C_8K-PNG/Fence007C_8K-PNG_NormalGL.png" id="5_olv3g"]
+[ext_resource type="Texture2D" uid="uid://che0jrc01eis4" path="res://RipeOrgans/Materials/Fence007C_8K-PNG/Fence007C_8K-PNG_Roughness.png" id="6_i218p"]
+[ext_resource type="Texture2D" uid="uid://kmct4s15domw" path="res://RipeOrgans/Materials/Rope002_1K-PNG/Rope002_1K-PNG_Color.png" id="10_k2xkv"]
+[ext_resource type="Texture2D" uid="uid://ckh1dday1mpy7" path="res://RipeOrgans/Materials/Rope002_1K-PNG/Rope002_1K-PNG_Displacement.png" id="11_kcgke"]
+[ext_resource type="Texture2D" uid="uid://c12furkqlvbjb" path="res://RipeOrgans/Materials/Rope002_1K-PNG/Rope002_1K-PNG_Metalness.png" id="12_cpoix"]
+[ext_resource type="Texture2D" uid="uid://q31e4bxr1880" path="res://RipeOrgans/Materials/Rope002_1K-PNG/Rope002_1K-PNG_NormalGL.png" id="13_giyxe"]
+[ext_resource type="Texture2D" uid="uid://b058go66jdfpq" path="res://RipeOrgans/Materials/Rope002_1K-PNG/Rope002_1K-PNG_Roughness.png" id="14_sec63"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3kr2"]
+albedo_texture = ExtResource("1_be07k")
+roughness_texture = ExtResource("3_ukw1r")
+normal_enabled = true
+normal_texture = ExtResource("2_pmpgn")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig5pj"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_o68bp")
+metallic = 1.0
+metallic_texture = ExtResource("4_ykyo8")
+roughness_texture = ExtResource("6_i218p")
+normal_enabled = true
+normal_texture = ExtResource("5_olv3g")
+heightmap_scale = 1.318
+heightmap_texture = ExtResource("3_dlrhr")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfyi4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oayjf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02pr7"]
+albedo_texture = ExtResource("10_k2xkv")
+metallic = 1.0
+metallic_texture = ExtResource("12_cpoix")
+roughness_texture = ExtResource("14_sec63")
+normal_enabled = true
+normal_texture = ExtResource("13_giyxe")
+heightmap_scale = -1.672
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("11_kcgke")
+uv1_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xfpqd"]
+sky_top_color = Color(0.775795, 0.231857, 0, 1)
+sky_horizon_color = Color(0.278334, 0.137966, 0.0407952, 1)
+sky_curve = 0.738687
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.278431, 0.137255, 0.0392157, 1)
+ground_curve = 0.0951369
+
+[sub_resource type="Sky" id="Sky_eoayu"]
+sky_material = SubResource("ProceduralSkyMaterial_xfpqd")
+
+[sub_resource type="Environment" id="Environment_vi4kc"]
+background_mode = 2
+sky = SubResource("Sky_eoayu")
+ssr_enabled = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jyydw"]
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00559425, 7.15256e-07, -0.00557375)
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="ConcreteFloorBottom" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -6, -40)
+use_collision = true
+collision_layer = 2
+collision_mask = 3
+size = Vector3(100, 0.001, 60)
+material = SubResource("StandardMaterial3D_t3kr2")
+
+[node name="ConcreteFloorRight" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, -3.8, -40)
+use_collision = true
+collision_layer = 2
+collision_mask = 3
+size = Vector3(100, 9, 22)
+material = SubResource("StandardMaterial3D_t3kr2")
+
+[node name="ConcreteFloorLeft" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, -3.8, -40)
+use_collision = true
+collision_layer = 2
+collision_mask = 3
+size = Vector3(100, 9, 22)
+material = SubResource("StandardMaterial3D_t3kr2")
+
+[node name="RustedGrating" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -40)
+use_collision = true
+collision_layer = 2
+collision_mask = 3
+size = Vector3(6.5, 0.001, 100)
+material = SubResource("StandardMaterial3D_ig5pj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55415, 0.703746, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("BoxShape3D_lfyi4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_oayjf")
+
+[node name="Player" parent="." instance=ExtResource("1_eodxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00767636, 0.784634, -0.00312424)
+collision_mask = 3
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 5.46926, 2)
+radius = 0.05
+height = 9.69814
+material = SubResource("StandardMaterial3D_02pr7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vi4kc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.888568, 0.342231, 0.30549, -0.385122, 0.194679, 0.902098, 0.249253, -0.919227, 0.304786, 0, 10.8923, 0)
+shadow_enabled = true
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.999217, 0, 0.0395563, 0, 1, 0, -0.0395563, 0, 0.999217, 3.84441, 0.660293, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_jyydw")

@@ -1,0 +1,7 @@
+res://RipeOrgans/Entites/Items/Cleaver/Model/Cleaver.tres::ce8d480cd66203479fa253f03754d5b1::1730765402::res://.godot/exported/133200997/export-41d7e59ba074419e99cffe220ebd0e88-Cleaver.res
+res://RipeOrgans/Entites/Items/Cleaver/cleaver.tscn::89e915de70430ef49bc661db11306327::1730834218::res://.godot/exported/133200997/export-19875a8d184fdc71abcbc22adcbff680-cleaver.scn
+res://RipeOrgans/Entites/Items/item.tscn::55463e3ba6cc37a4021b29d993a028a3::1730834218::res://.godot/exported/133200997/export-fc0ea6c85b3c5b047cea4b374b0c181f-item.scn
+res://RipeOrgans/Player/player.tscn::e1c5072abeffacde5c409cf57a0fc70a::1730834218::res://.godot/exported/133200997/export-4e1ebc386a5d882a6de3700119df6c91-player.scn
+res://RipeOrgans/Scenes/main.tscn::33351d6c63ed4d24ab019f3ebaa4b092::1730834218::res://.godot/exported/133200997/export-0d9629c7b23e69a9abcb645f7dfec72e-main.scn
+res://RipeOrgans/Scenes/weapon_animation_preview.tscn::73a819c9fc137757d6edfd521f827688::1730834218::res://.godot/exported/133200997/export-b0772983b631f579a56b2b16348e2424-weapon_animation_preview.scn
+res://RipeOrgans/Shaders/screen_shader.tscn::df92b5e87cae12e9ee90e445f1344d98::1730834218::res://.godot/exported/133200997/export-0cf1fd8b948247959c0da1e123f438a3-screen_shader.scn
