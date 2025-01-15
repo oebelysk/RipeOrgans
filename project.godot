@@ -15,6 +15,10 @@ run/main_scene="res://game/Scenes/factory01.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/proto_shape/plugin.cfg")
+
 [input]
 
 ui_left={
@@ -98,6 +102,7 @@ sprint={
 [physics]
 
 3d/physics_engine="JoltPhysics3D"
+jolt_3d/collisions/areas_detect_static_bodies=true
 
 [rendering]
 

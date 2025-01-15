@@ -1,8 +1,9 @@
-CollisionShape3D
-Area3D
-MeshInstance3D
-StaticBody3D
 RayCast3D
+ProtoRamp
+MeshInstance3D
+CollisionShape3D
+StaticBody3D
+Area3D
 Node3D
 DirectionalLight3D
 WorldEnvironment
@@ -11,4 +12,3 @@ CSGBox3D
 RigidBody3D
 AnimationPlayer
 TextureRect
-ColorRect

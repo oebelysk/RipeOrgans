@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c8g162qbo53t6"]
+[gd_scene load_steps=26 format=3 uid="uid://c8g162qbo53t6"]
 
 [ext_resource type="Texture2D" uid="uid://cxfwsvfpkuxf0" path="res://game/Materials/Concrete035_1K-PNG/Concrete035_1K-PNG_Color.png" id="1_be07k"]
 [ext_resource type="PackedScene" uid="uid://ccc17m7eo73r" path="res://game/Player/player.tscn" id="1_eodxr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0km5iboofxd6" path="res://game/Materials/Fence007C_8K-PNG/Fence007C_8K-PNG_Metalness.png" id="4_ykyo8"]
 [ext_resource type="Texture2D" uid="uid://v03rfnsuyij7" path="res://game/Materials/Fence007C_8K-PNG/Fence007C_8K-PNG_NormalGL.png" id="5_olv3g"]
 [ext_resource type="Texture2D" uid="uid://che0jrc01eis4" path="res://game/Materials/Fence007C_8K-PNG/Fence007C_8K-PNG_Roughness.png" id="6_i218p"]
+[ext_resource type="Script" path="res://addons/proto_shape/proto_ramp/proto_ramp.gd" id="10_5thbe"]
 [ext_resource type="Texture2D" uid="uid://kmct4s15domw" path="res://game/Materials/Rope002_1K-PNG/Rope002_1K-PNG_Color.png" id="10_k2xkv"]
 [ext_resource type="Texture2D" uid="uid://ckh1dday1mpy7" path="res://game/Materials/Rope002_1K-PNG/Rope002_1K-PNG_Displacement.png" id="11_kcgke"]
 [ext_resource type="Texture2D" uid="uid://c12furkqlvbjb" path="res://game/Materials/Rope002_1K-PNG/Rope002_1K-PNG_Metalness.png" id="12_cpoix"]
@@ -42,6 +43,12 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_oayjf"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_17qqd"]
+size = Vector3(5, 3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qfwi4"]
+size = Vector3(5, 3, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02pr7"]
 albedo_texture = ExtResource("10_k2xkv")
 metallic = 1.0
@@ -72,12 +79,11 @@ background_mode = 2
 sky = SubResource("Sky_eoayu")
 ssr_enabled = true
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_jyydw"]
-
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00559425, 7.15256e-07, -0.00557375)
 
 [node name="Player" parent="." instance=ExtResource("1_eodxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45001, 0)
 
 [node name="Ground" type="Node3D" parent="."]
 
@@ -98,7 +104,7 @@ size = Vector3(100, 9, 22)
 material = SubResource("StandardMaterial3D_t3kr2")
 
 [node name="ConcreteFloorLeft" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, -3.8, -40)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9252, -4, -39.9995)
 use_collision = true
 collision_layer = 2
 collision_mask = 3
@@ -106,7 +112,7 @@ size = Vector3(100, 9, 22)
 material = SubResource("StandardMaterial3D_t3kr2")
 
 [node name="RustedGrating" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
 use_collision = true
 collision_layer = 2
 collision_mask = 3
@@ -114,15 +120,61 @@ size = Vector3(6.5, 0.001, 100)
 material = SubResource("StandardMaterial3D_ig5pj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55415, 0.703746, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 0)
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+transform = Transform3D(1, -0.000918366, -9.76988e-06, 0.000918367, 1, 0.000110353, 9.67104e-06, -0.000110362, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_lfyi4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D/CollisionShape3D"]
 mesh = SubResource("BoxMesh_oayjf")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(0.999986, 0.00518135, 0.00115104, -0.00359693, 0.502084, 0.864811, 0.00390299, -0.864803, 0.502096, -7.85233, 0.728738, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.7486e-07, 0, 7.7486e-07, 1, 2.05072, 1.13477, -1.19209e-07)
+shape = SubResource("BoxShape3D_17qqd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_qfwi4")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91125, 2.27643, -0.123262)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D3"]
+transform = Transform3D(1, -0.000918366, -9.76988e-06, 0.000918367, 1, 0.000110353, 9.67104e-06, -0.000110362, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_lfyi4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D3/CollisionShape3D"]
+
+[node name="RayCast3D" type="RayCast3D" parent="Ground/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, -2, 0)
+collision_mask = 3
+
+[node name="ProtoRamp" type="CSGCombiner3D" parent="Ground"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.14608, 0.695864, -3.35928)
+use_collision = true
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("10_5thbe")
+type = 1
+width = 2.41984
+height = 2.55484
+depth = 4.93822
+anchor = 0
+anchor_fixed = true
+material = null
+calculation = 0
+steps = 8
+fill = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 5.46926, 2)
@@ -136,12 +188,3 @@ environment = SubResource("Environment_vi4kc")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.888568, 0.342231, 0.30549, -0.385122, 0.194679, 0.902098, 0.249253, -0.919227, 0.304786, 0, 10.8923, 0)
 shadow_enabled = true
-
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(0.999217, 0, 0.0395563, 0, 1, 0, -0.0395563, 0, 0.999217, 3.84441, 0.660293, 0)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0, 0, 0)
-shape = SubResource("CylinderShape3D_jyydw")
